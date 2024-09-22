@@ -2,19 +2,64 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rice Alumni Networks</title>
+    <title>DUV Alumni Networks</title>
     <link rel="stylesheet" href="style9.css">
+    <style>
+        /* Additional styling for the form */
+        .registration-box {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .registration-box h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .registration-box form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .registration-box label {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .registration-box input,
+        .registration-box select {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .registration-box button {
+            padding: 10px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .registration-box button:hover {
+            background-color: #004080;
+        }
+    </style>
 </head>
 <body>
 
     <!-- Header Section -->
     <header class="header">
         <div class="logo">
-            <img src="https://duvinternationalschool.com/wp-content/uploads/2024/02/cropped-duvlogo.png" alt="Rice Alumni Logo">
-        <h1>DUV ALUMNI NETWORK</h1>
+            <img src="https://duvinternationalschool.com/wp-content/uploads/2024/02/cropped-duvlogo.png" alt="DUV Alumni Logo">
+            <h1>DUV ALUMNI NETWORK</h1>
         </div>
         <nav>
             <ul>
@@ -28,9 +73,7 @@
 
     <!-- Main Banner Section -->
     <section class="banner">
-      
         <div class="banner-text">
-           
         </div>
     </section>
 
@@ -47,6 +90,35 @@
         <div class="network-card">
             <h3>DUV Community Engagement Program</h3>
             <p>The DUV Community Engagement Program invites alumni to take part in initiatives that support the school and the wider community. Whether through volunteering, fundraising, or organizing events, former students play a vital role in ensuring the ongoing success of DUV and contributing to the school’s mission of service and leadership.</p>
+        </div>
+
+        <!-- Alumni Registration Box -->
+        <div class="registration-box">
+            <h3>Register for Alumni Network</h3>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="year">Year of Passing Out:</label>
+                <input type="number" id="year" name="year" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="degree">Degree:</label>
+                <select id="degree" name="degree">
+                    <option value="bachelor">Bachelor's</option>
+                    <option value="master">Master's</option>
+                    <option value="phd">PhD</option>
+                    <option value="diploma">Diploma</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <button type="submit">Register</button>
+            </form>
         </div>
     </section>
 
