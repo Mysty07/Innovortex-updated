@@ -118,7 +118,7 @@ nav ul li a {
 }
 
 .activities-list ul li {
-    color: #333;
+    color:white;
 }
 
 @media only screen and (max-width: 768px) {
