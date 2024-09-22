@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Survey and Feedback Form</title>
+    <link rel="stylesheet" href="style7.css">
+</head>
+<body>
+    <header>
+        <img src="https://duvinternationalschool.com/wp-content/uploads/2024/02/cropped-duvlogo.png" alt="DUV Logo" class="logo">
+        <h1>DUV International School Survey & Feedback</h1>
+        <p>We value your feedback to help us improve our school and learning environment.</p>
+    </header>
+
+    <section class="survey-form">
+        <form action="#" method="post">
+            <!-- Personal Information Section -->
+            <h2>Personal Information</h2>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your email address" required><br>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="5" max="100" placeholder="Your age" required><br>
+
+            <label for="grade">Grade/Class:</label>
+            <select id="grade" name="grade" required>
+                <option value="">--Select Your Class--</option>
+                <option value="6">6th Grade</option>
+                <option value="7">7th Grade</option>
+                <option value="8">8th Grade</option>
+                <option value="9">9th Grade</option>
+                <option value="10">10th Grade</option>
+                <option value="11">11th Grade</option>
+                <option value="12">12th Grade</option>
+            </select><br>
+
+            <!-- Course Feedback Section -->
+            <h2>Course Feedback</h2>
+
+            <label for="course">Which Course Did You Attend?</label>
+            <select id="course" name="course" required>
+                <option value="">--Select Course--</option>
+                <option value="mathematics">Mathematics</option>
+                <option value="science">Science</option>
+                <option value="english">English</option>
+                <option value="history">History</option>
+                <option value="computer">Computer Science</option>
+                <option value="arts">Arts</option>
+                <option value="physical">Physical Education</option>
+            </select><br>
+
+            <label>How satisfied are you with the course?</label><br>
+            <input type="radio" id="very-satisfied" name="satisfaction" value="very-satisfied" required>
+            <label for="very-satisfied">Very Satisfied</label><br>
+            <input type="radio" id="satisfied" name="satisfaction" value="satisfied" required>
+            <label for="satisfied">Satisfied</label><br>
+            <input type="radio" id="neutral" name="satisfaction" value="neutral" required>
+            <label for="neutral">Neutral</label><br>
+            <input type="radio" id="dissatisfied" name="satisfaction" value="dissatisfied" required>
+            <label for="dissatisfied">Dissatisfied</label><br>
+            <input type="radio" id="very-dissatisfied" name="satisfaction" value="very-dissatisfied" required>
+            <label for="very-dissatisfied">Very Dissatisfied</label><br>
+
+            <!-- Instructor Feedback -->
+            <h2>Instructor Feedback</h2>
+
+            <label for="instructor">Who was your instructor?</label>
+            <input type="text" id="instructor" name="instructor" placeholder="Instructor's Name" required><br>
+
+            <label>Rate your instructor's performance:</label><br>
+            <select id="instructor-rating" name="instructor_rating" required>
+                <option value="">--Select Rating--</option>
+                <option value="5">Excellent (5/5)</option>
+                <option value="4">Good (4/5)</option>
+                <option value="3">Average (3/5)</option>
+                <option value="2">Below Average (2/5)</option>
+                <option value="1">Poor (1/5)</option>
+            </select><br>
+
+            <!-- Feedback Section -->
+            <h2>Your Feedback</h2>
+
+            <label for="recommend">Would you recommend this school to others?</label><br>
+            <input type="radio" id="yes" name="recommend" value="yes" required>
+            <label for="yes">Yes</label><br>
+            <input type="radio" id="no" name="recommend" value="no" required>
+            <label for="no">No</label><br>
+
+            <label for="comments">Comments/Suggestions:</label><br>
+            <textarea id="comments" name="comments" rows="4" placeholder="Share your experience or suggestions..."></textarea><br>
+
+            <!-- Submit Button -->
+            <input type="submit" value="Submit Feedback">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 DUV International School. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

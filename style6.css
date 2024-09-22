@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8f5;
+    line-height: 1.6;
+}
+
+/* Header Section */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0a0a40;
+    padding: 20px;
+    color: white;
+    text-align: left;
+}
+
+header .logo {
+    max-width: 80px;
+    margin-right: 20px;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+/* Faculty Section */
+.faculty-section {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #eef5f9;
+}
+
+.faculty-section h1 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #333;
+}
+
+.faculty-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.faculty-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 150px;
+}
+
+.faculty-card img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.faculty-card p {
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Testimonials Section */
+.testimonials {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #f0f8f5;
+}
+
+.testimonials h1 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #333;
+}
+
+.testimonial-slider {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.testimonial-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: left;
+}
+
+.testimonial-card img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.testimonial-content {
+    margin-top: 10px;
+}
+
+.testimonial-content h3 {
+    margin-bottom: 5px;
+    color: #0056b3;
+}
+
+.testimonial-content p {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.view-more {
+    margin-top: 20px;
+}
+
+.view-more button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.view-more button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer Section */
+footer {
+    background-color: #f4f4f4;
+    padding: 50px 0;
+    text-align: left;
+    color: #333;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 50px;
+}
+
+.footer-left, .footer-middle, .footer-right {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.footer-left ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.footer-left ul li {
+    margin-bottom: 10px;
+}
+
+.footer-left ul li a {
+    text-decoration: none;
+    color: #0056b3;
+}

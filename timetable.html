@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DUV International School - Time Table</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+
+    <header>
+        <img src="https://duvinternationalschool.com/wp-content/uploads/2024/02/cropped-duvlogo.png" alt="DUV Logo" class="logo">
+        <h1>DUV International School</h1>
+    </header>
+
+    <main>
+        <h2>Class Time Table</h2>
+        
+        <div class="class-select">
+            <label for="class">Select Class:</label>
+            <select id="class" onchange="updateSections()">
+                <option value="">-- Select Class --</option>
+                <option value="class1">Class 1</option>
+                <option value="class2">Class 2</option>
+                <option value="class3">Class 3</option>
+                <option value="class4">Class 4</option>
+                <option value="class5">Class 5</option>
+                <option value="class6">Class 6</option>
+                <option value="class7">Class 7</option>
+                <option value="class8">Class 8</option>
+                <option value="class9">Class 9</option>
+                <option value="class10">Class 10</option>
+                <option value="class11">Class 11</option>
+                <option value="class12">Class 12</option>
+            </select>
+        </div>
+
+        <div class="section-select">
+            <label for="section">Select Section/Stream:</label>
+            <select id="section" onchange="showTimetable()">
+                <option value="">-- Select Section/Stream --</option>
+            </select>
+        </div>
+
+        <div id="timetable" class="timetable"></div>
+    </main>
+
+    <footer>
+        &copy; 2024 DUV International School
+    </footer>
+
+    <script>
+        const sectionData = {
+            class1: ['A', 'B', 'C'],
+            class2: ['A', 'B'],
+            class3: ['A', 'B'],
+            class4: ['A', 'B', 'C'],
+            class5: ['A', 'B'],
+            class6: ['A', 'B', 'C'],
+            class7: ['A', 'B'],
+            class8: ['A', 'B', 'C'],
+            class9: ['A', 'B'],
+            class10: ['A', 'B', 'C'],
+            class11: ['PCM', 'PCB', 'Commerce', 'Humanities'],
+            class12: ['PCM', 'PCB', 'Commerce', 'Humanities']
+        };
+
+        const classTimetables = {
+            'class1': {
+                'A': [
+                    ["Math", "Mr. Sharma", "9:00 AM - 10:00 AM"],
+                    ["English", "Ms. Verma", "10:00 AM - 11:00 AM"],
+                    ["Science", "Mr. Singh", "11:00 AM - 12:00 PM"],
+                    ["Social Studies", "Ms. Gupta", "12:00 PM - 1:00 PM"],
+                    ["Hindi", "Ms. Rai", "2:00 PM - 3:00 PM"]
+                ],
+                'B': [
+                    ["Math", "Mr. Sharma", "9:00 AM - 10:00 AM"],
+                    ["English", "Ms. Verma", "10:00 AM - 11:00 AM"],
+                    ["Science", "Mr. Singh", "11:00 AM - 12:00 PM"],
+                    ["Social Studies", "Ms. Gupta", "12:00 PM - 1:00 PM"],
+                    ["Hindi", "Ms. Rai", "2:00 PM - 3:00 PM"]
+                ]
+            },
+            // Sample timetable for other classes
+            'class3': {
+                'A': [
+                    ["Math", "Mr. Gupta", "9:00 AM - 10:00 AM"],
+                    ["English", "Ms. Rani", "10:00 AM - 11:00 AM"],
+                    ["Science", "Mr. Roy", "11:00 AM - 12:00 PM"],
+                    ["Social Studies", "Ms. Gupta", "12:00 PM - 1:00 PM"]
+                ],
+                'B': [
+                    ["Math", "Mr. Gupta", "9:00 AM - 10:00 AM"],
+                    ["English", "Ms. Rani", "10:00 AM - 11:00 AM"],
+                    ["Science", "Mr. Roy", "11:00 AM - 12:00 PM"],
+                    ["Social Studies", "Ms. Gupta", "12:00 PM - 1:00 PM"]
+                ]
+            },
+            'class11': {
+                'PCM': [
+                    ["Math", "Mr. Gupta", "9:00 AM - 10:00 AM"],
+                    ["Physics", "Mr. Verma", "10:00 AM - 11:00 AM"],
+                    ["Chemistry", "Mr. Sharma", "11:00 AM - 12:00 PM"],
+                    ["English", "Ms. Rai", "12:00 PM - 1:00 PM"]
+                ],
+                'PCB': [
+                    ["Biology", "Mr. Gupta", "9:00 AM - 10:00 AM"],
+                    ["Physics", "Mr. Verma", "10:00 AM - 11:00 AM"],
+                    ["Chemistry", "Mr. Sharma", "11:00 AM - 12:00 PM"],
+                    ["English", "Ms. Rai", "12:00 PM - 1:00 PM"]
+                ],
+                'Commerce': [
+                    ["Accountancy", "Mr. Khanna", "9:00 AM - 10:00 AM"],
+                    ["Business Studies", "Ms. Kapoor", "10:00 AM - 11:00 AM"],
+                    ["Economics", "Mr. Rathi", "11:00 AM - 12:00 PM"],
+                    ["English", "Ms. Sharma", "12:00 PM - 1:00 PM"]
+                ],
+                'Humanities': [
+                    ["History", "Mr. Mishra", "9:00 AM - 10:00 AM"],
+                    ["Political Science", "Ms. Banerjee", "10:00 AM - 11:00 AM"],
+                    ["Sociology", "Mr. Thakur", "11:00 AM - 12:00 PM"],
+                    ["English", "Ms. Sharma", "12:00 PM - 1:00 PM"]
+                ]
+            }
+        };
+
+        function updateSections() {
+            const selectedClass = document.getElementById('class').value;
+            const sectionSelect = document.getElementById('section');
+            
+            sectionSelect.innerHTML = '<option value="">-- Select Section/Stream --</option>';
+            if (selectedClass && sectionData[selectedClass]) {
+                sectionData[selectedClass].forEach(section => {
+                    const option = document.createElement('option');
+                    option.value = section;
+                    option.text = section;
+                    sectionSelect.appendChild(option);
+                });
+            }
+            document.getElementById('timetable').innerHTML = ''; // Reset timetable when class changes
+        }
+
+        function showTimetable() {
+            const selectedClass = document.getElementById('class').value;
+            const selectedSection = document.getElementById('section').value;
+            const timetable = document.getElementById('timetable');
+            
+            if (selectedClass && selectedSection && classTimetables[selectedClass][selectedSection]) {
+                let timetableHTML = `<h3>Time Table for ${selectedClass.toUpperCase()} Section/Stream ${selectedSection.toUpperCase()}</h3>
+                <table>
+                    <tr>
+                        <th>Period</th>
+                        <th>Subject</th>
+                        <th>Teacher</th>
+                        <th>Time</th>
+                    </tr>`;
+                
+                classTimetables[selectedClass][selectedSection].forEach((subject, index) => {
+                    timetableHTML += `<tr>
+                        <td>${index + 1}</td>
+                        <td>${subject[0]}</td>
+                        <td>${subject[1]}</td>
+                        <td>${subject[2]}</td>
+                    </tr>`;
+                });
+                
+                timetableHTML += '</table>';
+                timetable.innerHTML = timetableHTML;
+            } else {
+                timetable.innerHTML = '';
+            }
+        }
+    </script>
+
+</body>
+</html>

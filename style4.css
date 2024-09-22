@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #e0f3db;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    width: 80px;
+    margin-right: 15px;
+}
+
+.navbar h1 {
+    font-size: 20px;
+    color: #5a5a5a;
+}
+
+.search-bar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar input {
+    width: 70%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background-color: #0a0a40;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-section .login-btn {
+    padding: 10px 20px;
+    background-color: #0a0a40;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Main Banner */
+.banner {
+    background-color: #0a0a40;
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.banner h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.banner p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.banner .catalog-btn {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #0a0a40;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Publishers Section */
+.publishers {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.publishers h3 {
+    font-size: 24px;
+    color: #0a0a40;
+    margin-bottom: 20px;
+}
+
+.publisher-logos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.publisher-logos img {
+    width: 120px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.publisher-logos img:hover {
+    transform: scale(1.1);
+}
+
+/* Notice Board Section */
+.notice-board {
+    background-color: #0a0a40;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.notice-board h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.notices {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.notice {
+    background-color: black;
+    padding: 15px;
+    width: 300px;
+    border-radius: 5px;
+}
+
+.notice p {
+    font-size: 16px;
+}

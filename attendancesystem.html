@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Attendance Tracker</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Header Style */
+        .header {
+            background-color: #1a3d7c;
+            padding: 15px;
+            text-align: center;
+            color: white;
+        }
+
+        .header img {
+            max-width: 80px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .header h1 {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #16335b;
+            overflow: hidden;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .navbar a {
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+            margin: 0 15px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        /* Container Styling */
+        .container {
+            width: 90%;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #16335b;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        select, input[type="date"], .button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .button {
+            background-color: #1a3d7c;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #16335b;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #16335b;
+            color: white;
+        }
+
+        td {
+            background-color: #f9f9f9;
+        }
+
+        /* Attendance Records Section */
+        .attendance-records {
+            margin-top: 30px;
+        }
+
+        .attendance-records h2 {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .attendance-records ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .attendance-records ul li {
+            background-color: #f9f9f9;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 5px solid #16335b;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #16335b;
+            color: #fff;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header">
+        <img src="https://duvinternationalschool.com/wp-content/uploads/2024/02/cropped-duvlogo.png" alt="School Logo">
+        <h1>DUV International School</h1>
+    </div>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        
+        <a href="#">Attendance Tracker</a>
+
+        <a href="#">Contact Us</a>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <h2>Attendance Tracking System</h2>
+
+        <!-- Class and Date Selection -->
+        <label for="class-select">Select Class:</label>
+        <select id="class-select">
+            <option value="">--Select Class--</option>
+            <option value="8">Class 8</option>
+            <option value="9">Class 9</option>
+            <option value="10">Class 10</option>
+            <option value="11">Class 11</option>
+            <option value="12">Class 12</option>
+        </select>
+
+        <label for="date-select">Select Date:</label>
+        <input type="date" id="date-select">
+
+        <!-- Student List Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Present</th>
+                    <th>Absent</th>
+                </tr>
+            </thead>
+            <tbody id="student-list">
+                <!-- Students will be populated here dynamically -->
+            </tbody>
+        </table>
+
+        <!-- Action Buttons -->
+        <button class="button" onclick="saveAttendance()">Save Attendance</button>
+        <button class="button" onclick="viewAttendance()">View Attendance Records</button>
+
+        <!-- Attendance Records Section -->
+        <div class="attendance-records">
+            <h2>Attendance Records</h2>
+            <ul id="attendance-records-list">
+                <!-- Attendance records will be displayed here -->
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 DUV International School. All rights reserved.
+    </footer>
+
+    <script>
+        const students = {
+            "8": ["Amit Sharma", "Priya Gupta", "Rahul Yadav", "Anjali Singh"],
+            "9": ["Sumit Kumar", "Meena Verma", "Rakesh Sinha", "Pooja Chauhan"],
+            "10": ["Vikas Dubey", "Sonal Mehta", "Aman Bhatt", "Neha Raj"],
+            "11": ["Ravi Patel", "Sunita Sharma", "Anil Yadav", "Rina Kaur"],
+            "12": ["Ajay Singh", "Tina Arora", "Manish Goyal", "Sakshi Verma"]
+        };
+
+        // Populate student list based on selected class
+        document.getElementById('class-select').addEventListener('change', function() {
+            const classSelected = this.value;
+            const studentList = document.getElementById('student-list');
+            studentList.innerHTML = '';
+
+            if (students[classSelected]) {
+                students[classSelected].forEach((student, index) => {
+                    const row = `
+                        <tr>
+                            <td>${student}</td>
+                            <td><input type="radio" name="attendance-${index}" value="present"></td>
+                            <td><input type="radio" name="attendance-${index}" value="absent"></td>
+                        </tr>
+                    `;
+                    studentList.innerHTML += row;
+                });
+            }
+        });
+
+        // Save attendance to localStorage
+        function saveAttendance() {
+            const classSelected = document.getElementById('class-select').value;
+            const dateSelected = document.getElementById('date-select').value;
+            if (!classSelected || !dateSelected) {
+                alert('Please select both class and date.');
+                return;
+            }
+
+            const attendanceData = [];
+            const radios = document.querySelectorAll('input[type="radio"]:checked');
+            radios.forEach(radio => {
+                const studentName = radio.closest('tr').querySelector('td').innerText;
+                attendanceData.push({ student: studentName, status: radio.value });
+            });
+
+            if (attendanceData.length === 0) {
+                alert('Please mark attendance for all students.');
+                return;
+            }
+
+            const recordKey = `${classSelected}_${dateSelected}`;
+            localStorage.setItem(recordKey, JSON.stringify(attendanceData));
+            alert('Attendance saved successfully!');
+        }
+
+        // View attendance records
+        function viewAttendance() {
+            const recordsList = document.getElementById('attendance-records-list');
+            recordsList.innerHTML = '';
+
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                const data = JSON.parse(localStorage.getItem(key));
+
+                let recordItem = `<li><strong>Class & Date:</strong> ${key}<br><strong>Attendance:</strong><br>`;
+                data.forEach(record => {
+                    recordItem += `${record.student}: ${record.status}<br>`;
+                });
+                recordItem += '</li>';
+
+                recordsList.innerHTML += recordItem;
+            }
+        }
+    </script>
+
+</body>
+</html>

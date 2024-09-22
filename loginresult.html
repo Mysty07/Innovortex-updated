@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style8.css">
+</head>
+<body>
+    <header>
+        <img src="https://duvinternationalschool.com/wp-content/uploads/2024/02/cropped-duvlogo.png" alt="DUV Logo" class="logo">
+        <h1>DUV International School</h1>
+    </header>
+
+    <div class="container">
+        <h1>Student Login</h1>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="admissionNumber">Admission Number</label>
+                <input type="text" id="admissionNumber" name="admissionNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Simulated authentication (in a real app, you'd check these values against a database)
+            const admissionNumber = document.getElementById('admissionNumber').value;
+            const password = document.getElementById('password').value;
+
+            if (admissionNumber === '12345' && password === 'password') {
+                // Redirect to the results page (results.html)
+                window.location.href = 'results.html';
+            } else {
+                alert('Invalid admission number or password');
+            }
+        });
+    </script>
+</body>
+</html>

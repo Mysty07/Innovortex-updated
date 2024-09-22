@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Learning Material</title>
+    <style>
+        body {
+            font-family:Georgia, 'Times New Roman', Times, serif, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #e1f097;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        #subject-list {
+            display: none; /* Initially hidden */
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .subject {
+            width: 30%;
+            background-color:#0a0a40;
+            color: white;
+            margin: 15px 0;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+
+        .subject:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .subject h2 {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .material-list {
+            margin-top: 10px;
+        }
+
+        .material-list a {
+            display: block;
+            background-color: #fff;
+            color: #007BFF;
+            padding: 10px;
+            text-decoration: none;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: 1px solid #007BFF;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .material-list a:hover {
+            background-color: #007BFF;
+            color: #fff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #333;
+            color: #fff;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+        <img src="https://duvinternationalschool.com/wp-content/uploads/2024/02/cropped-duvlogo.png" alt="DUV Logo" class="logo">
+        <h1>DUV International School</h1>
+    </header>
+
+    <div class="container">
+    
+
+        <h1>School Learning Material</h1>
+        <label for="class-select">Select your class:</label>
+        <select id="class-select" onchange="showClassOptions()">
+            <option value="">--Select Class--</option>
+            <option value="8">Class 8</option>
+            <option value="9">Class 9</option>
+            <option value="10">Class 10</option>
+            <option value="11">Class 11</option>
+            <option value="12">Class 12</option>
+        </select>
+
+        <!-- Stream Selection for Class 11 and 12 -->
+        <div id="stream-select-container" style="display: none;">
+            <label for="stream-select">Select your stream:</label>
+            <select id="stream-select" onchange="showSubjects(document.getElementById('class-select').value)">
+                <option value="">--Select Stream--</option>
+                <option value="science">Science</option>
+                <option value="humanities">Humanities</option>
+                <option value="commerce">Commerce</option>
+            </select>
+        </div>
+
+        <!-- Subjects List -->
+        <div class="subject-list" id="subject-list">
+
+            <!-- Mathematics Section -->
+            <div class="subject" id="math">
+                <h2>Mathematics</h2>
+                <div class="material-list">
+                    <a href="#">Chapter 1 (PDF)</a>
+                    <a href="#">Chapter 2 (PDF)</a>
+                    <a href="#">Math Practice Problems (Worksheet)</a>
+                </div>
+            </div>
+
+            <!-- Science Section -->
+            <div class="subject" id="science">
+                <h2>Science</h2>
+                <div class="material-list">
+                    <a href="#">Physics(PDF)</a>
+                    <a href="#">Biology(PDF)</a>
+                    <a href="#">Chemistry(PDF)</a>
+                    <a href="#">Science Experiments (Video)</a>
+                </div>
+            </div>
+
+            <!-- English Section -->
+            <div class="subject" id="english">
+                <h2>English</h2>
+                <div class="material-list">
+                    <a href="#">Grammar (PDF)</a>
+                    <a href="#">Poetry and chapters (PDF)</a>
+                    <a href="#">English Reading Comprehension (Worksheet)</a>
+                </div>
+            </div>
+
+            <!-- Hindi Section -->
+            <div class="subject" id="hindi">
+                <h2>Hindi</h2>
+                <div class="material-list">
+                    <a href="#">Literature- Chapters (PDF)</a>
+                    <a href="#">Grammar (PDF)</a>
+                    <a href="#">Hindi Reading Comprehension (Worksheet)</a>
+                </div>
+            </div>
+
+            <!-- Social Science Section -->
+            <div class="subject" id="social-science">
+                <h2>Social Science</h2>
+                <div class="material-list">
+                    <a href="#">Chapter 1 (PDF)</a>
+                    <a href="#">Chapter 2 (PDF)</a>
+                    <a href="#"></a>Chapter 3 (PDF)</a>
+                </div>
+            </div>
+
+            <!-- Biology Section (Class 11 & 12) -->
+            <div class="subject" id="biology" style="display: none;">
+                <h2>Biology</h2>
+                <div class="material-list">
+                    <a href="#">Chapter 1(PDF)</a>
+                    <a href="#">Chapter 2 (PDF)</a>
+                    <a href="#">Chapter 3 (PDF)</a>
+                </div>
+            </div>
+
+            <!-- Chemistry Section (Class 11 & 12) -->
+            <div class="subject" id="chemistry" style="display: none;">
+                <h2>Chemistry</h2>
+                <div class="material-list">
+                    <a href="#">Chapter 1(PDF)</a>
+                    <a href="#">Chapter 2 (PDF)</a>
+                    <a href="#">Chapter 3 (PDF)</a>
+                </div>
+            </div>
+
+            <!-- Physics Section (Class 11 & 12) -->
+            <div class="subject" id="physics" style="display: none;">
+                <h2>Physics</h2>
+                <div class="material-list">
+                    <a href="#">Chapter 1 (PDF)</a>
+                    <a href="#">Chapter 2 (PDF)</a>
+                    <a href="#">Chapter 3(PDF)</a>
+                </div>
+            </div>
+
+            <!-- Political Science Section (Humanities) -->
+            <div class="subject" id="political-science" style="display: none;">
+                <h2>Political Science</h2>
+                <div class="material-list">
+                    <a href="#">Chapter 1 (PDF)</a>
+                    <a href="#">Chapter 2 (PDF)</a>
+                    <a href="#">Chapter 3 (PDF)</a>
+                </div>
+            </div>
+
+            <!-- Economics Section (Humanities & Commerce) -->
+            <div class="subject" id="economics" style="display: none;">
+                <h2>Economics</h2>
+                <div class="material-list">
+                    <a href="#">Chapter 1 (PDF)</a>
+                    <a href="#">Chapter 2 (PDF)</a>
+                    <a href="#">Chapter 3 (PDF)</a>
+                </div>
+            </div>
+
+            <!-- History Section (Humanities) -->
+            <div class="subject" id="history" style="display: none;">
+                <h2>History</h2>
+                <div class="material-list">
+                    <a href="#">Chapter 1 (PDF)</a>
+                    <a href="#">Chapter 2 (PDF)</a>
+                    <a href="#">Chapter 3  (PDF)</a>
+                </div>
+            </div>
+
+            <!-- Accounts Section (Commerce) -->
+            <div class="subject" id="accounts" style="display: none;">
+                <h2>Accounts</h2>
+                <div class="material-list">
+                    <a href="#">Chapter 1 (PDF)</a>
+                    <a href="#">Chapter 2 (PDF)</a>
+                    <a href="#">Chapter 3 (PDF)</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 DUV International School. All rights reserved.
+    </footer>
+
+  <script>
+    function showClassOptions() {
+        const selectedClass = document.getElementById('class-select').value;
+        const streamContainer = document.getElementById('stream-select-container');
+        const subjectList = document.getElementById('subject-list');
+
+        // Hide all subjects initially
+        const allSubjects = document.querySelectorAll('.subject');
+        allSubjects.forEach(subject => {
+            subject.style.display = 'none';
+        });
+
+        // Show stream selection for classes 11 and 12
+        if (selectedClass === '11' || selectedClass === '12') {
+            streamContainer.style.display = 'block';
+        } else {
+            streamContainer.style.display = 'none';
+            showSubjects(selectedClass);
+        }
+    }
+
+    function showSubjects(selectedClass) {
+        const stream = document.getElementById('stream-select').value;
+        const subjectList = document.getElementById('subject-list');
+
+        // Show subject list
+        subjectList.style.display = 'flex';
+
+        // Hide all subjects initially
+        const allSubjects = document.querySelectorAll('.subject');
+        allSubjects.forEach(subject => {
+            subject.style.display = 'none';
+        });
+
+        if (selectedClass === '8' || selectedClass === '9' || selectedClass === '10') {
+            document.getElementById('math').style.display = 'block';
+            document.getElementById('science').style.display = 'block';
+            document.getElementById('english').style.display = 'block';
+            document.getElementById('hindi').style.display = 'block';
+            document.getElementById('social-science').style.display = 'block';
+        } else if (selectedClass === '11' || selectedClass === '12') {
+            if (stream === 'science') {
+                document.getElementById('math').style.display = 'block';
+                document.getElementById('biology').style.display = 'block';
+                document.getElementById('physics').style.display = 'block';
+                document.getElementById('chemistry').style.display = 'block';
+            } else if (stream === 'humanities') {
+                document.getElementById('political-science').style.display = 'block';
+                document.getElementById('economics').style.display = 'block';
+                document.getElementById('history').style.display = 'block';
+            } else if (stream === 'commerce') {
+                document.getElementById('accounts').style.display = 'block';
+                document.getElementById('math').style.display = 'block'; // Include Maths for Commerce
+                document.getElementById('economics').style.display = 'block'; // Include Economics for Commerce
+            }
+        }
+    }
+  </script>
+  
+</body>
+</html>

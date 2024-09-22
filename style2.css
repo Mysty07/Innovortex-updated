@@ -1,0 +1,81 @@
+body {
+    font-family: Georgia, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.calendar-container {
+    width: 80%;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo and School Name in a horizontal row */
+.logo-name-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Name on the left, logo on the right */
+}
+
+.school-logo {
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+    margin-left:0; /* Add space between name and logo */
+}
+
+/* School Name */
+.school-name {
+    font-size: 28px;
+    color: #333;
+    margin:0; /* Remove extra margin */
+    text-align:center;
+    margin-top: -50px;
+    
+}
+
+/* Calendar Title */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 100px;
+}
+
+/* Calendar Table */
+table.calendar {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table.calendar thead {
+    background-color: #007BFF;
+    color: white;
+}
+
+table.calendar thead th {
+    padding: 12px;
+    font-size: 18px;
+}
+
+table.calendar tbody tr {
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+table.calendar tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table.calendar tbody td {
+    padding: 12px;
+    font-size: 16px;
+    color: #333;
+}
+
+table.calendar tbody td:first-child {
+    font-weight: bold;
+}
