@@ -184,3 +184,26 @@ body {
         font-size: 16px;
     }
 }
+
+@media only screen and (max-width: 768px) {
+    /* Layout adjustments */
+    .row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .column {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Adjust padding and margins */
+    .section {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .heading {
+        font-size: 1.8em;
+    }
+}
