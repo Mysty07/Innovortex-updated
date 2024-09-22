@@ -59,3 +59,37 @@ button {
 button:hover {
     background-color: #218838;
 }
+
+@media only screen and (max-width: 768px) {
+    /* Example for images */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Example for containers */
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    /* Adjust font sizes */
+    body {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* Navigation */
+    nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Buttons */
+    button {
+        width: 100%;
+        padding: 15px;
+        font-size: 16px;
+    }
+}
+
