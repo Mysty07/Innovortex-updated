@@ -6,6 +6,11 @@
     font-family: Arial, sans-serif;
 }
 
+/* Body Background */
+body {
+    background: linear-gradient(to right, #07183d, #9d9fa3);
+}
+
 /* Header */
 .header {
     display: flex;
@@ -67,7 +72,7 @@ nav ul li a:hover {
 /* Content Section */
 .content {
     padding: 40px;
-    background-color: #f5f5f5;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
 }
 
 .content h2 {
@@ -101,52 +106,70 @@ nav ul li a:hover {
     color: #555;
 }
 
+/* Registration Box */
+.registration-box {
+    background: linear-gradient(to right, #001f3f, #6284d1);
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.registration-box h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.registration-box input,
+.registration-box select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white; /* Set input background to white for readability */
+    color: #333;
+}
+
+/* Button Styles */
+.registration-box button {
+    padding: 10px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.registration-box button:hover {
+    background-color: #004080;
+}
+
+/* Responsive Styles */
 @media only screen and (max-width: 768px) {
-    /* Example for images */
+    /* Ensure sections adjust for smaller screens */
+    .content {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .registration-box {
+        padding: 15px;
+    }
+
     img {
         max-width: 100%;
         height: auto;
     }
 
-    /* Example for containers */
-    .container {
-        width: 100%;
-        padding: 10px;
-    }
-
-    /* Adjust font sizes */
-    body {
-        font-size: 14px;
-        line-height: 1.5;
-    }
-
-    /* Navigation */
     nav {
-        display: flex;
         flex-direction: column;
     }
 
-    /* Buttons */
     button {
         width: 100%;
         padding: 15px;
         font-size: 16px;
-    }
-}
-@media only screen and (max-width: 768px) {
-    /* Ensure sections adjust for smaller screens */
-    .content-section {
-        padding: 10px;
-        font-size: 14px;
-    }
-
-    .feature-box {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
     }
 }
