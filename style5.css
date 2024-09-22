@@ -90,10 +90,10 @@ nav ul li a {
     color: white; /* Ensure all text is white */
 }
 
-.activities-header p {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 20px;
+.activities-section p, 
+.activities-section h3, 
+.activities-section ul li {
+    color: white; /* Ensures all text within the section is white */
 }
 
 /* Activities Images */
