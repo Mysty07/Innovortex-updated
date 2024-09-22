@@ -165,3 +165,44 @@ body {
         font-size: 16px;
     }
 }
+
+@media only screen and (max-width: 768px) {
+    /* Adjust body font size for readability */
+    body {
+        font-size: 14px;
+        line-height: 1.6;
+        padding: 10px;
+    }
+
+    /* Make header flexible and responsive */
+    .top-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+    }
+
+    /* Make banners fit mobile screens */
+    .banner {
+        padding: 20px 10px;
+        font-size: 18px;
+    }
+
+    /* Adjust images to be fully responsive */
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
