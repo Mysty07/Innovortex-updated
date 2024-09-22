@@ -65,3 +65,21 @@ h2 {
         font-size: 16px;
     }
 }
+@media only screen and (max-width: 768px) {
+    /* Adjust image or gallery components */
+    .gallery {
+        display: flex;
+        flex-direction: column;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Responsive buttons or controls */
+    .controls {
+        width: 100%;
+        font-size: 16px;
+    }
+}
