@@ -52,7 +52,7 @@ body {
 
 /* Banner and virtual tour button styles */
 .banner {
-    background-color: #004080;
+    background: linear-gradient(to right, #004080, #66a3ff); /* Gradient effect from dark blue to light blue */
     color: white;
     padding: 50px 0;
     text-align: center;
