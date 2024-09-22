@@ -89,3 +89,39 @@ header {
         font-size: 16px;
     }
 }
+
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* Adjust headings and text sizes */
+    h1, h2, h3, h4 {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    /* Make containers and sections responsive */
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Buttons */
+    .btn {
+        width: 100%;
+        font-size: 16px;
+        padding: 15px;
+    }
+}
